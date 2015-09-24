@@ -1,5 +1,5 @@
 	<nav class="navbar navbar-static-top navbar-default" role="navigation"> 
-	  <div class="container-fluid">
+	  <div class="container-fluid container">
 	    <div class="navbar-header">
 	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 	        <span class="sr-only">Toggle navigation</span>
@@ -14,7 +14,8 @@
 	      	<ul class="nav navbar-nav navbar-right">
 	      		<li><%= link_to "Home", root_path %></li>
 				<li><%= link_to "About Us", about_path %></li>
-				<% if !user_signed_in? %><li><%= link_to "Sign In", new_user_session_path %></li><% end %> 
+				<% if !user_signed_in? %><li><%= link_to "Sign In", new_user_session_path %></li><% end %>
+				<% if user_signed_in? %><li><%= link_to "Edit Account", edit_user_registration_path %></li><% end %> 
 				<% if user_signed_in? %><li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li><% end %> 
 			</ul>
 	    </div>
