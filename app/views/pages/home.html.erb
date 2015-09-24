@@ -1,6 +1,8 @@
 <div class="jumbotron center">
 	<h1>Very Pinteresting</h1>
 	
-	<%= link_to "login", "#", class: "btn btn-default btn-lg" %>
-	<%= link_to "sign up", "#", class: "btn btn-primary btn-lg" %>
+	<% if !user_signed_in? %> 
+		<%= link_to "login", new_user_session_path, class: "btn btn-default btn-lg" %>
+		<%= link_to "sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+	<% end %>
 </div>
